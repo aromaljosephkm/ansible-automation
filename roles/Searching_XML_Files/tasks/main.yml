@@ -1,0 +1,11 @@
+
+---
+- name: Check whether XML files present
+  ansible.builtin.find:
+    paths: /root/tmp
+    patterns: '*.xml'
+
+- name: Listing all the XML files
+  ansible.builtin.shell:
+    cmd: ls | grep .xml
+    chdir: /root/tmp
