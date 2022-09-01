@@ -1,0 +1,13 @@
+---
+- name: Restart the Clickhouse Service
+  ansible.builtin.shell:
+    cmd: systemctl restart clickhouse-server
+
+- name: Status of the Clickhouse Service
+  ansible.builtin.shell:
+    cmd: systemctl status clickhouse-server
+  register: status
+
+- name: Listing all the files
+  debug:
+    msg: "{{ status.stdout.split('\n') }}"
