@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <yandex>
-    <kafka>
-      <subtag2>
-        <auto_offset_reset>latest</auto_offset_reset>
-        <heartbeat_interval_ms>10000</heartbeat_interval_ms>
-        <session_timeout_ms>60000</session_timeout_ms>
-        <max_poll_interval_ms>300000</max_poll_interval_ms>
-      </subtag2>
-    </kafka>
+  <kafka>
+    <subtag2>
+      <auto_offset_reset>latest</auto_offset_reset>
+      <heartbeat_interval_ms>10000</heartbeat_interval_ms>
+      <session_timeout_ms>60000</session_timeout_ms>
+      <max_poll_interval_ms>300000</max_poll_interval_ms>
+    </subtag2>
+  </kafka>
 </yandex>

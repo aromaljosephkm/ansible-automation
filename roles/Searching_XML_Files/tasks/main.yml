@@ -5,7 +5,12 @@
     paths: /root/tmp
     patterns: '*.xml'
 
-- name: Listing all the XML files
+- name: Finding the files
   ansible.builtin.shell:
     cmd: ls | grep .xml
     chdir: /root/tmp
+  register: xml_files
+
+- name: Listing all the files
+  debug:
+    msg: "{{ xml_files.stdout.split('\n') }}"

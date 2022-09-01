@@ -1,3 +1,4 @@
+.gitignore
 ansible.cfg
 inventory
 passwd.yml

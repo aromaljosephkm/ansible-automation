@@ -1,0 +1,10 @@
+---
+- name: Reading the file.xml file
+  ansible.builtin.shell:
+    cmd: cat file.xml
+    chdir: /root/tmp
+  register: file_content
+
+- name: "Print the file content to a console"
+  debug:
+    msg: "{{ file_content.stdout.replace('\t','  ').split('\n') }}"
