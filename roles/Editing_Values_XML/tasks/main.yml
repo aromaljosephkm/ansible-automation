@@ -1,0 +1,6 @@
+---
+- name: Editing heartbeat_interval_ms to 12345
+  community.general.xml:
+    path: /root/tmp/file.xml
+    xpath: /yandex/kafka/subtag2/heartbeat_interval_ms
+    value: '12345'
