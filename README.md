@@ -2,7 +2,7 @@
 Project for DevOps
 
 ## Ansible - an overview
-> Ansible® is an open sourceIT automation tool that automates provisioning, configuration management, application deployment, orchestration, and many other manual IT processes. Ansible users can use Ansible automation to install software, automate daily tasks, provision infrastructure, improve security and compliance, patch systems, and share automation across the entire organization.
+> Ansible is an open sourceIT automation tool that automates provisioning, configuration management, application deployment, orchestration, and many other manual IT processes. Ansible users can use Ansible automation to install software, automate daily tasks, provision infrastructure, improve security and compliance, patch systems, and share automation across the entire organization.
 
 ## Ansible - Our Usecase
 > Our plan is to edit the configuration of the chronicle servers together whenever it is needed. So we will be using ansible to ssh into the chronicle servers as root and then will have to change the contents of the configuration XML file.
