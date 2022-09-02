@@ -16,7 +16,8 @@ Project for DevOps
     - Copy the Public Key from ***~/.ssh/*** to the other system using the command ***cat id_rsa.pub | ssh username@ip_address "cat - >> ~/.ssh/authorized_keys"*** to the authorized keys.
 - There are roles defined for each operation in the playbook. Uncomment the roles needed.
 
-## Things to be Done:
+## Things to Do:
+ >- Indentation must be considered on adding configurations
  >- Ansible vault passwords must be considered instead of plaintext passwords.
 
 
