@@ -6,4 +6,4 @@
     # - Deleting_XML_Elements
     # - Editing_Values_XML
     # - XML_Config_View
-    # - Restart_Clickhouse_Service
+    - Restart_Clickhouse_Service
