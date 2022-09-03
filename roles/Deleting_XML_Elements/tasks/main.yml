@@ -2,5 +2,5 @@
 - name: Remove all children from the 'kafka' element
   community.general.xml:
     path: /root/tmp/file.xml
-    xpath: /yandex/kafka/*
+    xpath: /yandex/kafka
     state: absent
