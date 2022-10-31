@@ -8,5 +8,5 @@
 - name: Editing heartbeat_interval_ms to 12345
   community.general.xml:
     path: "{{ config_file }}"
-    xpath: /yandex/kafka/subtag2/heartbeat_interval_ms
+    xpath: "{{ config_xpath }}"
     value: '12345'

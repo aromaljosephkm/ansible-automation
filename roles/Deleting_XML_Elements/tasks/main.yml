@@ -8,5 +8,5 @@
 - name: Remove all children from the 'kafka' element
   community.general.xml:
     path: "{{ config_file }}"
-    xpath: /yandex/storage_configuration/policies/chronicle_policy_disk2
+    xpath: "{{ config_xpath }}"
     state: absent
