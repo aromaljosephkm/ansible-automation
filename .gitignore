@@ -1,4 +1,2 @@
-ansible.cfg
 inventory
-passwd.yml
 data.txt
