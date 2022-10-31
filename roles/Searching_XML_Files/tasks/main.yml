@@ -1,14 +1,21 @@
 
 ---
+- name: Including Global Variables
+  include_vars: "{{ playbook_dir }}/config.yaml"
+
+- name: Echo directory and File
+  debug: 
+    msg: Config Folder - {{ config_directory }} | Config File - {{ config_file }}
+
 - name: Check whether XML files present
   ansible.builtin.find:
-    paths: /root/tmp
+    paths: "{{ config_directory }}"
     patterns: '*.xml'
 
 - name: Finding the files
   ansible.builtin.shell:
     cmd: ls | grep .xml
-    chdir: /root/tmp
+    chdir: "{{ config_directory }}"
   register: xml_files
 
 - name: Listing all the files

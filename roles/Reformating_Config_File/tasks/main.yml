@@ -1,0 +1,27 @@
+
+---
+- name: Including Global Variables
+  include_vars: "{{ playbook_dir }}/config.yaml"
+
+- name: Echo directory and File
+  debug: Config Folder - {{ config_directory }} | Config File - {{ config_file }}
+
+- name: Copy Python file to the server
+  copy:
+    src: "{{ role_path }}/files/formater.py"
+    dest: "{{ config_directory }}"
+
+- name: Executing the formater
+  ansible.builtin.shell: 
+    cmd: python3 formater.py
+    chdir: "{{ config_directory }}"
+
+- name: Replacing formated file
+  ansible.builtin.shell: 
+    cmd: mv output.xml config.xml
+    chdir: "{{ config_directory }}"
+
+- name: Removing formater
+  ansible.builtin.shell: 
+    cmd: rm formater.py
+    chdir: "{{ config_directory }}"

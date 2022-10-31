@@ -1,6 +1,12 @@
 ---
+- name: Including Global Variables
+  include_vars: "{{ playbook_dir }}/config.yaml"
+
+- name: Echo directory and File
+  debug: Config Folder - {{ config_directory }} | Config File - {{ config_file }}
+
 - name: Remove all children from the 'kafka' element
   community.general.xml:
-    path: /root/tmp/file.xml
-    xpath: /yandex/kafka
+    path: "{{ config_file }}"
+    xpath: /yandex/storage_configuration/policies/chronicle_policy_disk2
     state: absent

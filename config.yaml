@@ -1,0 +1,3 @@
+# Global variables
+config_directory : /etc/test/
+config_file : /etc/test/config.xml

@@ -1,9 +1,11 @@
 ---
-- hosts: webserver
+- hosts: localhost
   roles:
     - Searching_XML_Files
+    # - Backup_Config_File
     # - Adding_XML_Elements
     # - Deleting_XML_Elements
     # - Editing_Values_XML
     # - XML_Config_View
-    - Restart_Clickhouse_Service
+    # - Reformating_Config_File
+    # - Restart_Clickhouse_Service

@@ -1,3 +1,4 @@
+
 ---
 - name: Including Global Variables
   include_vars: "{{ playbook_dir }}/config.yaml"
@@ -5,8 +6,7 @@
 - name: Echo directory and File
   debug: Config Folder - {{ config_directory }} | Config File - {{ config_file }}
 
-- name: Editing heartbeat_interval_ms to 12345
-  community.general.xml:
-    path: "{{ config_file }}"
-    xpath: /yandex/kafka/subtag2/heartbeat_interval_ms
-    value: '12345'
+- name: Backing up the config File
+  ansible.builtin.shell:
+    cmd: cp config.xml backup_config.xml
+    chdir: "{{ config_directory }}"

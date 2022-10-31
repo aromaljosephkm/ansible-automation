@@ -1,9 +1,15 @@
 ---
+- name: Including Global Variables
+  include_vars: "{{ playbook_dir }}/config.yaml"
+
+- name: Echo directory and File
+  debug: Config Folder - {{ config_directory }} | Config File - {{ config_file }}
+
 - name: Adding elements to another element
   community.general.xml:
-    file: /root/tmp/file.xml
-    xpath: /yandex/kafka
+    file: "{{ config_file }}"
+    xpath: /yandex/storage_configuration/policies
     input_type: xml
     pretty_print: yes
     add_children:
-      - "<subtag2><auto_offset_reset>latest</auto_offset_reset><heartbeat_interval_ms>10000</heartbeat_interval_ms><session_timeout_ms>60000</session_timeout_ms><max_poll_interval_ms>300000</max_poll_interval_ms></subtag2>"
+      - "\n<chronicle_policy_disk2>\n\t<volumes>\n\t\t<chronicle_disk_volume2>\n\t\t\t<disk>data1</disk>\n\t\t</chronicle_disk_volume2>\n\t</volumes>\n</chronicle_policy_disk2>"
